@@ -1,8 +1,24 @@
-﻿
+﻿@model WebApplication1.Models.Product
 @{
     ViewBag.Title = "Prod_Descr";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Prod_Descr</h2>
 
+
+@foreach (System.Data.DataRow row in Model.kkkk.Rows)
+{
+    <tr>
+        @foreach (System.Data.DataColumn col in Model.kkkk.Columns)
+        {
+            <td> @row[col.ColumnName]</td>
+        }
+    </tr>
+    <br />
+}
+
+<br />
+  
+@for (int i=0;i<Model.kkkk.Columns.Count;i++) { 
+    <p>@Model.kkkk.Rows[Model.Product_of_ID][i]</p>
+}
