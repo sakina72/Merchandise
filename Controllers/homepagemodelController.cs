@@ -11,9 +11,10 @@ namespace WebApplication1.Controllers
     public class homepagemodelController : Controller
     {
         // GET: homepage
-        public ActionResult Index()
+        public ActionResult homepage()
         {
-            return View();
+            var obj = new homepagemodel() { Prod_Price = 12,Prod_ID=22 };
+            return View(obj);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Models;
 using System.Data.SqlClient;
+using System.Data;
 
 
 namespace WebApplication1.Controllers
@@ -34,12 +35,14 @@ namespace WebApplication1.Controllers
             connectionString();
             con.Open();
             com.Connection = con;
+            
             com.CommandText = "select * from Customer where Cust_ID='"+acc.Name+"' and Cust_Password='"+acc.Password+ "'";
             dr = com.ExecuteReader();
             if (dr.Read()) {
-
+                
                 con.Close();
-                return View("../homepagemodel/homepage");
+                //return View("../homepagemodel/homepage");
+                return RedirectToAction("homepage", "homepagemodel");
             }
             else {
                 con.Close();

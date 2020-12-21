@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using WebApplication1.Models;
 using System.Data.SqlClient;
 
+
+
 namespace WebApplication1.Controllers
 {
     public class ProductController : Controller
@@ -16,9 +18,13 @@ namespace WebApplication1.Controllers
         SqlDataReader dr;
 
         [HttpGet]
-        public ActionResult Prod_Descr() {
+        public ActionResult Prod_Descr(int id=1)
+        {
 
-            return View();
+            Product xx = new Product();
+            xx.kkkk = xx.Table();
+            xx.Product_of_ID = id;
+            return View(xx);
         }
         void connectionString()
         {
@@ -26,8 +32,12 @@ namespace WebApplication1.Controllers
             con.ConnectionString = "data source= 192.168.42.1,1433; database= MerchandiseDB;  User ID=cpfuser;Password=!Log123#;";
         }
 
+        
+        
+        
         // GET: Product
         [HttpPost]
+        
         public ActionResult Add_to_cart(Product prod)
         {
             if (prod.Order_Amount >= 1)
