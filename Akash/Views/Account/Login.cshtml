@@ -1,0 +1,61 @@
+﻿        
+@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/Account/_LayoutPage1.cshtml";
+}
+
+<h1>Sign In Page </h1>
+<div class="w3ls-login">
+    <!-- form starts here -->
+    <form action="verify" method="post">
+        <div class="w3ls-ribbon">
+            <div class="ribbon-wrapper">
+                <div class="glow">&nbsp;</div>
+                <div class="ribbon-front">
+                    <h2>login to your account</h2>
+                </div>
+            </div>
+        </div>
+        <div class="agile-field-txt">
+            <label>
+                Username :
+            </label>
+            <input type="text" name="Name" placeholder=" " required="" />
+        </div>
+        <div class="agile-field-txt">
+            <label>
+                Password :
+            </label>
+            <input type="password" name="Password" placeholder=" " required="" id="myInput" />
+            <div class="agile_label">
+                <input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
+                <label class="check" for="check3">Show password</label>
+            </div>
+        </div>
+        <!-- script for show password -->
+        <script>
+				function myFunction() {
+					var x = document.getElementById("myInput");
+					if (x.type === "password") {
+						x.type = "text";
+					} else {
+						x.type = "password";
+					}
+				}
+        </script>
+        <!-- //script for show password -->
+        <div class="w3ls-login  w3l-sub">
+            <input type="submit" value="Login">
+        </div>
+        <p class="agile-bot">
+            don't have an account?
+            <a href="#">register</a>
+        </p>
+    </form>
+</div>
+<!-- //form ends here -->
+<!--copyright-->
+
+<!--//copyright-->
+</body>
+
