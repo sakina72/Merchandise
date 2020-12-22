@@ -4,21 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
-@foreach (System.Data.DataRow row in Model.kkkk.Rows)
-{
-    <tr>
-        @foreach (System.Data.DataColumn col in Model.kkkk.Columns)
-        {
-            <td> @row[col.ColumnName]</td>
-        }
-    </tr>
-    <br />
-}
-
-<br />
-  
-@for (int i=0;i<Model.kkkk.Columns.Count;i++) { 
-    <p>@Model.kkkk.Rows[Model.Product_of_ID][i]</p>
-}
+@Model.Prod_ID<br/>
+@Model.Prod_Name<br />
+@Model.Prod_Descr<br />
+@Model.Prod_Price<br />
