@@ -7,12 +7,12 @@ namespace WebApplication1.Models
 {
     public class homepagemodel
     {
+        public  string Prod_ID { get; set; }
+        public  string Prod_Name { get; set; }
         public int Prod_Price { get; set; }
-
-        public int Order_Amount { get; set; } = 0;
-        public int Prod_ID { get; set; } 
-        public string ImagePath { get; set; }
-        public string Prod_Name { get; set; }
+        public string Prod_descr { get; set; }
+        public string user_name { get; set; }
 
     }
+
 }
