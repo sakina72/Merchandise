@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Sign_Up";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login-box">
+    <form action="verify" method="post">
+        <h1>Login</h1>
+        <div class="text-box">
+            <i class="fa fa-user" title="Edit"></i>
+            <input type="text" placeholder="Enter New Unique Username" name="New_CustID" value="" required="" />
+        </div>
+
+        <div class="text-box">
+            <i class="fa fa-user" title="Edit"></i>
+            <input type="number" placeholder="Enter Conctact Number" name="New_Cust_Contact" value="" required="" />
+        </div>
+
+        <div class="text-box">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            <input type="password" placeholder="Enter New Password" id="pass" required="" name="New_Cust_Password" />
+        </div>
+
+        <input class="btn" type="submit" name="" value="Create New Account" />
+
+
+    </form>
+</div>
+
+
+
