@@ -1,0 +1,32 @@
+﻿@model WebApplication1.Models.Product
+@{
+    ViewBag.Title = "Product Description";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>@Model.Prod_Name<br /></h3>
+            <hr />
+            <img src="~/images/@(Model.Prod_ID.ToLower() + ".jpg")" alt="Product Image" />
+        </div>
+        <div class="col-sm-6">
+            <div class="product-details">
+                <h4><b>Product ID: </b>@Model.Prod_ID<br />
+                <hr />
+                <b>Product Description: </b>@Model.Prod_Descr<br />
+                <hr />
+                <b>Product Price: </b>INR @Model.Prod_Price<br />
+                <hr />
+                </h4>
+            </div>
+
+            <div class="add-cart">
+                <button id="AddToCart">Add To Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
