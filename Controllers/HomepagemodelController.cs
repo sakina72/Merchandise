@@ -41,15 +41,14 @@ namespace WebApplication1.Controllers
             return View(listid);
         }
         [HttpPost]
-        public ActionResult addtocart()
+        public ActionResult addtocart(string Prod_ID, int Prod_Price)
         {
-            homepagemodel hmodel = new homepagemodel();
-             string Prod_ID = hmodel.Prod_Name ;
-             int Prod_UnitPrice = hmodel.Prod_Price;
-             int Prod_Quantity = 1;
-             int Prod_TotalPrice = Prod_Quantity * Prod_UnitPrice;
-             string Cart_ID = (string)Session["username"];
-             SqlDataReader dr;
+            
+            int Prod_UnitPrice = Prod_Price;
+            int Prod_Quantity = 1;
+            int Prod_TotalPrice = Prod_Quantity * Prod_UnitPrice;
+            string Cart_ID = (string)Session["username"];
+            SqlDataReader dr;
 
             using (SqlConnection connection = new SqlConnection("data source= 192.168.42.1,1433;" +
                                                                 " database= MerchandiseDB;  User ID=cpfuser;" +
@@ -57,8 +56,8 @@ namespace WebApplication1.Controllers
             {
                 connection.Open();
 
-                string query = "INSERT INTO CART (Cart_ID, Prod_ID, Prod_UnitPrice, Prod_Quantity, Prod_TotalPrice) values ('" + Cart_ID + "','" + Prod_ID +"','"+  Prod_UnitPrice +"','"+ Prod_Quantity+ "','" + Prod_TotalPrice + "')";
-                using (SqlCommand command = new SqlCommand(query, connection))  
+                string query = "INSERT INTO CART (Cart_ID, Prod_ID, Prod_UnitPrice, Prod_Quantity, Prod_TotalPrice) values ('" + Cart_ID + "','" + Prod_ID + "','" + Prod_UnitPrice + "','" + Prod_Quantity + "','" + Prod_TotalPrice + "')";
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.CommandText = query;
                     dr = command.ExecuteReader();
@@ -71,9 +70,9 @@ namespace WebApplication1.Controllers
 
             }
             return new EmptyResult();
+            
 
         }
-
 
     }
 }
