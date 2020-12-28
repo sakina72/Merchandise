@@ -66,10 +66,9 @@
                         <img class="card-img-top" src="~/images/@(Model[i].Prod_ID.ToLower() + ".jpg")" alt="Card image" style="height:200px;width:200px">
                         <h5 class="card-title">@Model[i].Prod_Name</h5>
                     </a>
-                    <div class="card-body">
-                        
-                        <p class="card-text">@Model[i].Prod_descr</p>
-                    </div>
+                    <form action="addtocart/?Prod_ID=@Prod_ID&Prod_Price=@Convert.ToInt16(Prod_Price)" method="post">
+                            <button type="submit" value="addtocart" >ADD TO CART</button>
+                    </form>
                 </div>
             </div>
 
