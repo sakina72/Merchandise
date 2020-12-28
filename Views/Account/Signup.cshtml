@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Signup";
+    Layout = "~/Views/Account/_LayoutPage1.cshtml";
+}
+
+<div class="signup-box">
+    <form action="verify" method="post">
+        <h1>Sign Up</h1>
+        <div class="text-box">
+            <i class="fa fa-user" title="Edit"></i>
+            <input type="text" placeholder="Full Name" name="" value="" required="" />
+        </div>
+
+        <div class="text-box">
+            <i class="fa fa-user" title="Edit"></i>
+            <input type="text" placeholder="Username" name="" value="" required="" />
+        </div>
+
+        <div class="text-box">
+            <i class="fa fa-envelope" title="Edit"></i>
+            <input type="email" placeholder="Email" name="" value="" required="" />
+        </div>
+
+        <div class="text-box">
+            <i class="fa fa-phone" title="Edit"></i>
+            <input type="tel" placeholder="Contact" pattern="[+]{1}[0-9]{11,14}" name="" value="" required="" />
+        </div>
+
+        <div class="text-box">
+            <i class="fa fa-address-book" title="Edit"></i>
+            <input type="text" placeholder="Address" name="" value="" required="" />
+        </div>
+
+        <div class="text-box">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            <input type="password" placeholder="Password" id="pass" required="" />
+        </div>
+
+        <input class="btn" type="submit" name="" value="Sign Up" />
+
+        <div class="reg-link">
+            <p>Already a User? <a href="~/Views/Account/Login.cshtml"> Login </a></p>
+        </div>
+    </form>
+
+</div>
+
